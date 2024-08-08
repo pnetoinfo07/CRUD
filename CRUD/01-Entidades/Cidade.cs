@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CRUD.Entidades
+namespace CRUD._01_Entidades
 {
-    public class Time
+    public class Cidade
     {
+        public int Id { get; set; }
         public string Nome { get; set; }
-        public int AnoCriacao { get; set; }
+        public int Qtd_habitantes { get; set; }
     }
 }
