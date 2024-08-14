@@ -34,6 +34,18 @@ foreach (Time t in times)
     Console.WriteLine($"{t.Nome}");
 }
 int id = 1;
-Time timeEscolhido = service.BuscarTimePorId(id);
-Console.WriteLine(timeEscolhido.Id);
-Console.WriteLine(timeEscolhido.Nome);
+Time editTIme = new Time();
+editTIme.Nome = "Barcelona";
+editTIme.AnoCriacao = 1930;
+
+service.Editar(id, editTIme);
+
+times = service.Listar();
+foreach (Time t in times)
+{
+    Console.WriteLine($"{t.Id}");
+    Console.WriteLine($"{t.Nome}");
+}
+//Time timeEscolhido = service.BuscarTimePorId(id);
+//Console.WriteLine(timeEscolhido.Id);
+//Console.WriteLine(timeEscolhido.Nome);

@@ -24,8 +24,9 @@ namespace CRUD.Aplicacao
             repository.Adicionar(time);
         }
 
-        public void Remover(Time time)
+        public void Remover(int id)
         {
+            Time time = BuscarTimePorId(id);
             repository.Remover(time);
         }
 
@@ -37,6 +38,10 @@ namespace CRUD.Aplicacao
         public Time BuscarTimePorId(int id)
         {
            return repository.BuscarPorId(id);
+        }
+        public void Editar(int id, Time time)
+        {
+            repository.Editar(id, time);
         }
     }
 }

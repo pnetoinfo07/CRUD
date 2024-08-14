@@ -38,5 +38,9 @@ namespace CRUD._03_Aplicacao
         {
             return repository.BuscarPorId(id);
         }
+        public void Editar(int id, Aluno editAluno)
+        {
+            repository.Editar(id, editAluno);   
+        }
     }
 }

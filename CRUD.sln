@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CRUD", "CRUD\CRUD.csproj", "{E7F60E45-BF01-4116-AD67-09CFB4DBD1B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontEnd", "FrontEnd\FrontEnd.csproj", "{42076BA7-4688-4792-B214-F0F09622AB02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrontEnd", "FrontEnd\FrontEnd.csproj", "{42076BA7-4688-4792-B214-F0F09622AB02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APICRUD", "APICRUD\APICRUD.csproj", "{96082848-2F91-4E3A-B379-CBE858F7A9D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{42076BA7-4688-4792-B214-F0F09622AB02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42076BA7-4688-4792-B214-F0F09622AB02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42076BA7-4688-4792-B214-F0F09622AB02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96082848-2F91-4E3A-B379-CBE858F7A9D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96082848-2F91-4E3A-B379-CBE858F7A9D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96082848-2F91-4E3A-B379-CBE858F7A9D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96082848-2F91-4E3A-B379-CBE858F7A9D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
