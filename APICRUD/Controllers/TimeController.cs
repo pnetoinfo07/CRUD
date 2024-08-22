@@ -22,6 +22,11 @@ namespace APICRUD.Controllers
         {
             _service.Adicionar(t);
         }
+        [HttpGet("BuscarPorID")]
+        public void BuscarPorID()
+        {
+
+        }
 
         [HttpGet("listar-time")]
         public List<Time> ListarTime()

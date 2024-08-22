@@ -10,38 +10,34 @@ namespace CRUD.Aplicacao
 {
     public class TimeService
     {
-        public SimuladorBD bd { get; set; }
+        //public SimuladorBD bd { get; set; }
         public TimeRepository repository { get; set; }
 
         public TimeService(SimuladorBD bdPreenchido)
         {
-            bd = bdPreenchido;
-            repository = new TimeRepository(bd);
+            //bd = bdPreenchido;
+            repository = new TimeRepository();
         }
-
         public void Adicionar(Time time)
         {
-            repository.Adicionar(time);
+            repository.AdicionarProduto(time);
         }
-
         public void Remover(int id)
         {
-            Time time = BuscarTimePorId(id);
-            repository.Remover(time);
+            //Time time = BuscarTimePorId(id);
+            //repository.Remover(time);
         }
-
         public List<Time> Listar()
         {
-            return repository.Listar();
+            return null;
         }
-
         public Time BuscarTimePorId(int id)
         {
-           return repository.BuscarPorId(id);
+            return null;// repository.BuscarPorId(id);
         }
         public void Editar(int id, Time time)
         {
-            repository.Editar(id, time);
+            //repository.Editar(id, time);
         }
     }
 }
