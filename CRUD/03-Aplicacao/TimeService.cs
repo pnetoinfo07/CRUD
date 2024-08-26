@@ -25,9 +25,8 @@ namespace CRUD.Aplicacao
         }
 
         public void Remover(int id)
-        {
-            Time time = BuscarTimePorId(id);
-            repository.Remover(time);
+        {           
+            repository.Remover(id);
         }
 
         public List<Time> Listar()

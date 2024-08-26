@@ -1,6 +1,7 @@
 ﻿using CRUD.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ namespace CRUD.Repositorios
     public class TimeRepository
     {
         public SimuladorBD bd { get; set; }
+        private const string ConnectionString = "Data Source=CRUD.db";
 
         public TimeRepository(SimuladorBD bdPreenchido)
         {
@@ -18,11 +20,32 @@ namespace CRUD.Repositorios
 
         public void Adicionar(Time time)
         {
-            bd.Times.Add(time);
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+                string comandInsert = @"INSERT INTO Times(Nome,AnoCriacao) 
+                                    VALUES (@Nome,@AnoCriacao)";
+
+                using (var command = new SQLiteCommand(comandInsert, connection))
+                {
+                    command.Parameters.AddWithValue("@Nome", time.Nome);
+                    command.Parameters.AddWithValue("@AnoCriacao", time.AnoCriacao);
+                    command.ExecuteNonQuery();
+                }
+            }
         }
-        public void Remover(Time time)
+        public void Remover(int id)
         {
-            bd.Times.Remove(time);
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+                string deleteCommand = "DELETE FROM Times WHERE Id = @Id";
+                using (var command = new SQLiteCommand(deleteCommand, connection))
+                {
+                    command.Parameters.AddWithValue("@Id", id);
+                    command.ExecuteNonQuery();
+                }
+            }
         }
         public void Editar(int id, Time editTime)
         {
