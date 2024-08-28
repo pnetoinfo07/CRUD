@@ -40,7 +40,7 @@ namespace CRUD.Aplicacao
         }
         public void Editar(int id, Time time)
         {
-            repository.Editar(id, time);
+            repository.Editar(id, time.Nome, time.AnoCriacao);
         }
     }
 }

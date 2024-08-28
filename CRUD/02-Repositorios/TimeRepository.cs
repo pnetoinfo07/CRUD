@@ -47,16 +47,46 @@ namespace CRUD.Repositorios
                 }
             }
         }
-        public void Editar(int id, Time editTime)
+        public void Editar(int id, string nome, int anoCriacao)
         {
-            Time timeDoBancoDados = BuscarPorId(id);
-
-            timeDoBancoDados.Nome = editTime.Nome;
-            timeDoBancoDados.AnoCriacao = editTime.AnoCriacao;
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+                string updateCommand = @"UPDATE Times
+                                  SET Nome = @Nome, AnoCriacao = @AnoCriacao
+                                  WHERE Id = @Id";
+                using (var command = new SQLiteCommand(updateCommand, connection))
+                {
+                    command.Parameters.AddWithValue("@Id", id);
+                    command.Parameters.AddWithValue("@Nome", nome);
+                    command.Parameters.AddWithValue("@AnoCriacao", anoCriacao);
+                    command.ExecuteNonQuery();
+                }
+            }
         }
         public List<Time> Listar()
         {
-            return bd.Times.ToList();
+            List<Time> lista = new List<Time>();           
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+                string selectCommand = "SELECT Id, Nome, AnoCriacao FROM Times;";
+                using (var command = new SQLiteCommand(selectCommand, connection))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Time t = new Time();
+                            t.Id = int.Parse(reader["Id"].ToString());
+                            t.Nome = reader["Nome"].ToString();
+                            t.AnoCriacao = int.Parse(reader["AnoCriacao"].ToString());
+                            lista.Add(t);
+                        }
+                    }
+                }
+            }
+            return lista;
         }
         public Time BuscarPorId(int id)
         {

@@ -40,7 +40,5 @@ namespace APICRUD.Controllers
         {
             _service.Editar(id,time);
         }
-
-
     }
 }

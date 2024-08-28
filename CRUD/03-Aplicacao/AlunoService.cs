@@ -11,15 +11,11 @@ namespace CRUD._03_Aplicacao
 {
     public class AlunoService
     {
-        public SimuladorBD bd { get; set; }
         public AlunoRepository repository { get; set; }
-
-        public AlunoService(SimuladorBD bdPreenchido)
+        public AlunoService()
         {
-            bd = bdPreenchido;
-            repository = new AlunoRepository(bd);
+            repository = new AlunoRepository();
         }
-
         public void Adicionar(Aluno aluno)
         {
             repository.Adicionar(aluno);

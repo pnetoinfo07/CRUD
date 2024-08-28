@@ -22,6 +22,14 @@ public static class InicializadorBd
                  Nome TEXT NOT NULL,
                  AnoCriacao INTEGER NOT NULL
                 );";
+
+            commandoSQL += @"   
+                 CREATE TABLE IF NOT EXISTS Alunos(
+                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                 Nome TEXT NOT NULL,
+                 Idade INTEGER NOT NULL,
+                 Peso REAL NOT NULL
+                );";
             using (var command = new SQLiteCommand(commandoSQL, connection))
             {
                 command.ExecuteNonQuery();
