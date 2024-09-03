@@ -17,7 +17,9 @@ namespace CRUD._02_Repositorios
         {
             bd = bdPreenchido;
         }
-        public AlunoRepository(){}
+        public AlunoRepository()
+        {
+        }
         public void Adicionar(Aluno aluno)
         {
             using (var connection = new SQLiteConnection(ConnectionString))

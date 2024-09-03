@@ -12,12 +12,10 @@ namespace CRUD.Repositorios
     {
         public SimuladorBD bd { get; set; }
         private const string ConnectionString = "Data Source=CRUD.db";
-
         public TimeRepository(SimuladorBD bdPreenchido)
         {
             bd = bdPreenchido;
         }
-
         public void Adicionar(Time time)
         {
             using (var connection = new SQLiteConnection(ConnectionString))
