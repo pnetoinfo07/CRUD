@@ -31,7 +31,6 @@ namespace CRUD.Aplicacao
         {
             return repository.Listar();
         }
-
         public Time BuscarTimePorId(int id)
         {
            return repository.BuscarPorId(id);
