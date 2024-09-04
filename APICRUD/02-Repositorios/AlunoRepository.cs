@@ -11,9 +11,10 @@ namespace CRUD._02_Repositorios
 {
     public class AlunoRepository
     {
-        private const string ConnectionString = "Data Source=CRUD.db";
-        public AlunoRepository()
+        private readonly string ConnectionString;
+        public AlunoRepository(IConfiguration configuration)
         {
+            ConnectionString = configuration.GetConnectionString("DefaultConnection");
         }
         public void Adicionar(Aluno aluno)
         {

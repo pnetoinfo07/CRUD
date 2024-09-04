@@ -9,9 +9,9 @@ namespace APICRUD.Controllers;
 public class AlunoController : ControllerBase
 {
 	private readonly AlunoService _service;
-	public AlunoController()
+	public AlunoController(IConfiguration config)
 	{
-		_service = new AlunoService();
+		_service = new AlunoService(config);
 	}
 	[HttpPost("adicionar-aluno")]
 	public void AdicionarAluno(Aluno aluno)

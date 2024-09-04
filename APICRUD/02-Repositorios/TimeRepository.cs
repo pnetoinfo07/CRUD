@@ -10,10 +10,11 @@ namespace CRUD.Repositorios
 {
     public class TimeRepository
     {
-        private const string ConnectionString = "Data Source=CRUD.db";
-        public TimeRepository()
+        private readonly string ConnectionString;
+        public TimeRepository(IConfiguration configuration)
         {
-        }
+            ConnectionString = configuration.GetConnectionString("DefaultConnection");
+        }    
         public void Adicionar(Time time)
         {
             using (var connection = new SQLiteConnection(ConnectionString))

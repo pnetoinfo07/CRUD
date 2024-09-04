@@ -2,6 +2,7 @@
 using CRUD.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,10 +11,11 @@ namespace CRUD._02_Repositorios
 {
     public class CidadeRepository
     {
-        public CidadeRepository()
-        {           
+        public readonly string ConnectionString;
+        public CidadeRepository(IConfiguration config)
+        {
+            ConnectionString = config.GetConnectionString("DefaultConnection");
         }
-
         public void Adicionar(Cidade cidade)
         {
             throw new Exception();
@@ -33,7 +35,6 @@ namespace CRUD._02_Repositorios
         {
             throw new Exception();
         }
-
         public Cidade BuscarPorId(int id)
         {
             throw new Exception();

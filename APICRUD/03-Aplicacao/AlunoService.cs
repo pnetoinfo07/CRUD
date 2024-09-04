@@ -12,9 +12,9 @@ namespace CRUD._03_Aplicacao
     public class AlunoService
     {
         public AlunoRepository repository { get; set; }
-        public AlunoService()
+        public AlunoService(IConfiguration config)
         {
-            repository = new AlunoRepository();
+            repository = new AlunoRepository(config);
         }
         public void Adicionar(Aluno aluno)
         {

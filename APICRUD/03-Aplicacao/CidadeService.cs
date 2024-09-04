@@ -14,9 +14,9 @@ namespace CRUD._03_Aplicacao
     {
         public CidadeRepository repository { get; set; }
 
-        public CidadeService()
+        public CidadeService(IConfiguration config)
         {            
-            repository = new CidadeRepository();
+            repository = new CidadeRepository(config);
         }
 
         public void Adicionar(Cidade cidade)
