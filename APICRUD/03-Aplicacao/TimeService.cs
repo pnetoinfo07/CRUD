@@ -35,9 +35,9 @@ namespace CRUD.Aplicacao
         {
            return repository.BuscarPorId(id);
         }
-        public void Editar(int id, Time time)
+        public void Editar(Time time)
         {
-            repository.Editar(id, time.Nome, time.AnoCriacao);
+            repository.Editar(time);
         }
     }
 }

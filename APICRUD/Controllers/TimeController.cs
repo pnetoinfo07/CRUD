@@ -34,9 +34,9 @@ namespace APICRUD.Controllers
         }
 
         [HttpPut("Editar-time")]
-        public void EditarTime(int id, Time time)
+        public void EditarTime(Time time)
         {
-            _service.Editar(id,time);
+            _service.Editar(time);
         }
     }
 }
